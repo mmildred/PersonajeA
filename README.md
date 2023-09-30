@@ -1,6 +1,8 @@
 # PersonajeA
 ## Ángel con trompeta
-Texto
+Marcos Ontiveros Nolasco ;
+Mildred Mariana Banda López
+GDS0543
 ## Materiales utilizados
 | Nombre | Descripción | Cantidad | Precio |
 |--------|-------------|----------|--------|
