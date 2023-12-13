@@ -1,0 +1,364 @@
+[
+    {
+        "id": "df448d70a99ee81e",
+        "type": "tab",
+        "label": "pruebaLED",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a247108c18ce2c05",
+        "type": "inject",
+        "z": "df448d70a99ee81e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 260,
+        "wires": [
+            [
+                "95ae1af1dc922677"
+            ]
+        ]
+    },
+    {
+        "id": "78d113321541a0a6",
+        "type": "debug",
+        "z": "df448d70a99ee81e",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "9acca173053cd38f",
+        "type": "function",
+        "z": "df448d70a99ee81e",
+        "name": "contador",
+        "func": "var contador =global.get('contador');\nglobal.set('contador',contador+=1);\nmsg.payload=contador;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nglobal.set('contador',0)\n",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "78d113321541a0a6"
+            ]
+        ]
+    },
+    {
+        "id": "3ea88540c593f473",
+        "type": "mqtt in",
+        "z": "df448d70a99ee81e",
+        "name": "",
+        "topic": "utng/eaza/led",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "992c7d88f783943c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 890,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b796591c324d91af",
+        "type": "mqtt in",
+        "z": "df448d70a99ee81e",
+        "name": "",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "992c7d88f783943c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "95ae1af1dc922677",
+        "type": "ui_switch",
+        "z": "df448d70a99ee81e",
+        "name": "",
+        "label": "led",
+        "tooltip": "",
+        "group": "6a91a2a2edfae7b5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 390,
+        "y": 220,
+        "wires": [
+            [
+                "338b773dded9d115"
+            ]
+        ]
+    },
+    {
+        "id": "338b773dded9d115",
+        "type": "mqtt out",
+        "z": "df448d70a99ee81e",
+        "name": "",
+        "topic": "utng/eaza/lenador",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "992c7d88f783943c",
+        "x": 670,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c5d2524f78cc87c7",
+        "type": "remote-access",
+        "z": "df448d70a99ee81e",
+        "confignode": "3f997e73ee58e891",
+        "name": "",
+        "verbose": 0,
+        "x": 740,
+        "y": 80,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1432621d0ac91812",
+        "type": "ui_switch",
+        "z": "df448d70a99ee81e",
+        "name": "",
+        "label": "Mov Cabeza",
+        "tooltip": "",
+        "group": "6a91a2a2edfae7b5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "sirve",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "nosirve",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 390,
+        "y": 360,
+        "wires": [
+            [
+                "ac5e5fcebfefb6b6"
+            ]
+        ]
+    },
+    {
+        "id": "ca318e2971611dd6",
+        "type": "inject",
+        "z": "df448d70a99ee81e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 360,
+        "wires": [
+            [
+                "1432621d0ac91812"
+            ]
+        ]
+    },
+    {
+        "id": "ac5e5fcebfefb6b6",
+        "type": "mqtt out",
+        "z": "df448d70a99ee81e",
+        "name": "",
+        "topic": "utng/eaza/lenador",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d0b5ef83c543fb33",
+        "x": 650,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "357a4865c859f367",
+        "type": "ui_spacer",
+        "z": "df448d70a99ee81e",
+        "name": "spacer",
+        "group": "6a91a2a2edfae7b5",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "992c7d88f783943c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.1.100",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6a91a2a2edfae7b5",
+        "type": "ui_group",
+        "name": "controllers",
+        "tab": "bb9e643aebcdee59",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3f997e73ee58e891",
+        "type": "remote-config",
+        "name": "Node-RED UI",
+        "host": "localhost",
+        "protocol": "http",
+        "port": "1880",
+        "baseurl": "/ui",
+        "instancehash": "ihl6ze5kkpssw9cx0qa37nbzr59atr1eun4mluu99v80qrss7oge1ifcwttxeseh",
+        "server": "nodered03.remote-red.com",
+        "region": "us"
+    },
+    {
+        "id": "d0b5ef83c543fb33",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.1.100",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bb9e643aebcdee59",
+        "type": "ui_tab",
+        "name": "lenador",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]
