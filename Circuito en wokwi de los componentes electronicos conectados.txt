@@ -1,0 +1,92 @@
+from machine import Pin, PWM
+from hcsr04 import HCSR04
+from time import sleep
+
+
+pines=[Pin(12,Pin.OUT),
+Pin(13,Pin.OUT),
+Pin(14,Pin.OUT)];
+
+colores=[[1,0,0],[0,1,0],[0,0,1]];
+#servo motor
+servo =PWM(Pin(15),freq = 50)
+
+
+# Creamos el objeto HCSR04
+sensor = HCSR04(trigger_pin=5, echo_pin=18, echo_timeout_us=24000)
+
+# Inicio del zumbador
+buzzer = PWM(Pin(2), freq=440, duty=0)  # Inicialmente, el zumbador está apagado
+
+# Define el tono de Spider-Man
+spiderman_melody = [
+    (330, 0.2),  # Mi
+    (349, 0.2),  # Fa
+    (392, 0.2),  # Sol
+    (330, 0.2),  # Mi
+    (392, 0.2),  # Sol
+    (330, 0.2),  # Mi
+    (294, 0.2),  # Re
+    (330, 0.2),  # Mi
+    (349, 0.2),  # Fa
+    (392, 0.2),  # Sol
+    (330, 0.2),  # Mi
+    (294, 0.2),  # Re
+    (330, 0.2),  # Mi
+    (330, 0.2),  # Mi
+    (349, 0.2),  # Fa
+    (392, 0.2),  # Sol
+    (440, 0.2),  # La
+    (392, 0.2),  # Sol
+    (349, 0.2),  # Fa
+    (330, 0.2),  # Mi
+]
+
+# Función para tocar una melodía
+def play_melody(melody, tempo):
+    for note in melody:
+        frequency, duration = note
+        buzzer.freq(frequency)
+        buzzer.duty(512)
+        sleep(duration * tempo)
+    buzzer.duty(0)
+
+# Ciclo infinito
+while True:
+
+    distancia = sensor.distance_cm()
+    print("Distancia:", distancia, "centímetros")
+    
+    # Define la distancia umbral para activar el tono de Spider-Man
+    distancia_umbral = 10  # Puedes ajustar este valor
+    
+    if distancia <=100:
+        play_melody(spiderman_melody, 0.8)  # Reproducir la melodía de Spider-
+        pines[0].value(1)
+        pines[1].value(0)
+        for i in range(1800,8000):
+            servo.duty_u16(i)
+
+        
+    else:
+        buzzer.duty(0) 
+        pines[0].value(0)
+        pines[1].value(1)
+
+    
+    sleep(1)
+
+
+-->Link https://wokwi.com/projects/380887476437683201
+
+
+
+
+
+
+
+
+
+
+
+
