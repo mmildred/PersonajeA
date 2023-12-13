@@ -32,8 +32,8 @@ Leñador
 |--------|---------|------|
 |Thonny|4.1.2|Software Libre|
 
-## Prototipo en dibujo
-![Prototipo](https://drive.google.com/file/d/10pfem6FmaKHE6m0JL8oMTJP38QDukGKy/view?usp=sharing)
+## Prototipo
+https://drive.google.com/file/d/10pfem6FmaKHE6m0JL8oMTJP38QDukGKy/view?usp=sharing
 
 ## Flujo de node-red
 https://github.com/mmildred/PersonajeA/blob/62b3f1c50ddba9ea6dd04349aa24680a07ffcb81/flows%20(1)%20(1).json
