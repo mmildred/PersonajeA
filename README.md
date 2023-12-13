@@ -1,13 +1,31 @@
-# PersonajeA
-## Ángel con trompeta
-Marcos Ontiveros Nolasco ;
-Mildred Mariana Banda López
-GDS0543
+# Personaje Navideño
+### GDS0543
+
+## Nombre del personaje 
+
+Leñador
+
+##  Nombre de los Integrantes
+
+|Nombre | Apellido Paterno | Apellido Materno |
+|-|-|-|
+|Eduardo Antonio|Zapatero|Arellano|
+|Mildred Mariana|Banda|López|
+
+
 ## Materiales utilizados
 | Nombre | Descripción | Cantidad | Precio |
 |--------|-------------|----------|--------|
-|ESP32|Microcontrolador con acceso a WiFi y Bluetooth|1|$140.00|
-|Cables Dupont|Cables para conectar circuito|50|$60.00|
+|Esp32|Microcontrolador con 30 pines con comunicacion WIFI y Bluetooth|2|$150.00|
+|Cable dupont|Cables para conexion de prototipos de pruebas|50|$60.00|
+|Sensor Pir Hc-sr501|Detector De Movimiento|1|$55.00|
+|Mini protoboard |Conexion de los componentes|1|$60.00|
+|Servo motores|Proporciona movimiento|2|$80.00|
+|Luces LEDs |Iluminacion|6|$2.00|
+|Un muñeco|El muñeco que realizará los mivimietos|1|$100.00|
+|Cinta de aislar |Para unir los componentes (cables)|1|$50|
+|Pegamento|Adhesivo para ensamblar componentes y materiales|2|$22.00|
+|Herramientas|Utencilios y otros matereiales que utilizaron para la creación del tronco, y muñec, además del circuito|10|$100.00|
 
 ## Software utilizado
 | Nombre | Versión | Tipo |
@@ -15,3 +33,9 @@ GDS0543
 |Thonny|4.1.2|Software Libre|
 
 ## Prototipo en dibujo
+
+## Flujo de node-red
+
+## Fotos de elaboración de código
+
+## Fotos de elaboración de personaje 
