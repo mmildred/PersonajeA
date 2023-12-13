@@ -38,7 +38,7 @@ Leñador
 https://github.com/mmildred/PersonajeA/blob/62b3f1c50ddba9ea6dd04349aa24680a07ffcb81/flows%20(1)%20(1).json
 
 ## Código (.py)
-
+https://github.com/mmildred/PersonajeA/blob/main/lenadorpy.py
 
 ## Video de elaboración de personaje 
 https://drive.google.com/drive/folders/1MYoXdDYSUNkNTd7i5Rz9cHznkdSzradL?usp=drive_link
